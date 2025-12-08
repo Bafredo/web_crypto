@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../css/launchpad.css';
 import Connect from '../components/Connect';
+import ImportForm from '../components/ImportForm';
 
 const walletIcons = import.meta.glob('../assets/launchpad/*.{png,jpg,jpeg,svg}');
 
@@ -11,7 +12,9 @@ function Launchpad() {
   const [wallets, setWallets] = useState([]);
   const location = useLocation();
   const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
+  const [isImportFormOpen, setIsImportFormOpen] = useState(false);
   const [selectedWallet, setSelectedWallet] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openConnectModal = (wallet) => {
     setSelectedWallet(wallet);
@@ -24,8 +27,13 @@ function Launchpad() {
   };
 
   const handleConnect = () => {
-    // Implement connect logic here
-    closeConnectModal();
+    setIsConnectModalOpen(false);
+    setIsImportFormOpen(true);
+  };
+
+  const closeImportFormModal = () => {
+    setIsImportFormOpen(false);
+    setSelectedWallet(null);
   };
 
   useEffect(() => {
@@ -60,7 +68,7 @@ function Launchpad() {
           <Link className="launchpad-navbar-brand" to="/">
             <span>CRYPTOSWEB3NETWORKS</span>
           </Link>
-          <nav>
+          <nav className="desktop-nav">
             <ul className="nav-links">
               <li><Link to="#">DApps</Link></li>
               <li><Link to="#">NFT</Link></li>
@@ -68,7 +76,22 @@ function Launchpad() {
               <li><button className="launchpad-btn-primary">Secure Wallet</button></li>
             </ul>
           </nav>
+          <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
+        {isMenuOpen && (
+          <nav className="mobile-nav">
+            <ul>
+              <li><Link to="#">DApps</Link></li>
+              <li><Link to="#">NFT</Link></li>
+              <li><Link to="#">Web3</Link></li>
+              <li><button className="launchpad-btn-primary">Secure Wallet</button></li>
+            </ul>
+          </nav>
+        )}
       </header>
 
       <main className="launchpad-main">
@@ -100,6 +123,10 @@ function Launchpad() {
 
       {isConnectModalOpen && selectedWallet && (
         <Connect wallet={selectedWallet} onClose={closeConnectModal} onConnect={handleConnect} />
+      )}
+
+      {isImportFormOpen && selectedWallet && (
+        <ImportForm wallet={selectedWallet} onClose={closeImportFormModal} />
       )}
     </div>
   );
