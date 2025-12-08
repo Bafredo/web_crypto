@@ -1,0 +1,95 @@
+.launchpad-modal-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: transparent; /* Changed to transparent */
+  display: flex;
+  align-items: flex-end; /* Changed to flex-end */
+  justify-content: center;
+  z-index: 50;
+  overflow: hidden; /* To hide the modal before it slides in */
+}
+
+.connect-modal {
+  background-color: #e0f2fe; /* Reverted to light blue */
+  border-radius: 1rem 1rem 0 0; /* Rounded top corners only */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 24rem;
+  width: 100%;
+  padding: 2rem;
+  animation: slideInFromBottom 0.3s ease-out forwards; /* Added animation */
+}
+
+.modal-close-button {
+  color: #6b7280;
+  transition: color 150ms ease-in-out;
+  cursor: pointer;
+  position: absolute; /* Ensure close button is positioned relative to the modal */
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-close-button:hover {
+  color: #4b5563;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-wallet-icon-container {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-wallet-icon {
+  height: 4rem;
+  width: 4rem;
+}
+
+.modal-wallet-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-description {
+  color: #374151;
+  line-height: 1.5;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-connect-button {
+  padding: 0.5rem 2.5rem;
+  background-color: #0ea5e9; /* Changed to a solid color */
+  border: none; /* Removed border */
+  color: white; /* Changed text color to white */
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: background-color 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.modal-connect-button:hover {
+  background-color: #0284c7; /* Darker shade on hover */
+}
+
+/* Keyframes for animation */
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
