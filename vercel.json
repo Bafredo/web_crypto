@@ -1,3 +1,8 @@
 {
-  "root": "web3"
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
