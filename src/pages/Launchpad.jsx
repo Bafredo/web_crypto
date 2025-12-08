@@ -57,7 +57,7 @@ function Launchpad() {
     <div className="launchpad-container">
       <header className="launchpad-header">
         <div className="container">
-          <Link className="navbar-brand" to="/">
+          <Link className="launchpad-navbar-brand" to="/">
             <span>CRYPTOSWEB3NETWORKS</span>
           </Link>
           <nav>
@@ -65,7 +65,7 @@ function Launchpad() {
               <li><Link to="#">DApps</Link></li>
               <li><Link to="#">NFT</Link></li>
               <li><Link to="#">Web3</Link></li>
-              <li><button className="btn-primary">Secure Wallet</button></li>
+              <li><button className="launchpad-btn-primary">Secure Wallet</button></li>
             </ul>
           </nav>
         </div>

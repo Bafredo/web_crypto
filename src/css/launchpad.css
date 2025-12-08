@@ -26,9 +26,9 @@ body {
     padding: 0 1rem;
 }
 
-.navbar-brand span {
+.launchpad-navbar-brand span {
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 0.95rem;
 }
 
 .nav-links {
@@ -46,13 +46,17 @@ body {
     font-size: 1rem;
 }
 
-.btn-primary {
+.launchpad-btn-primary {
     background-color: #ffffff00;
     color: white;
     border: 1px solid #ffffff;
     padding: 0.5rem 1rem;
-    border-radius: 6px;
+    border-radius: 36px;
     cursor: pointer;
+}
+.launchpad-btn-primary:hover {
+    background-color: #ffffff;
+    color: black;
 }
 
 .launchpad-main {
@@ -75,9 +79,10 @@ body {
 .notification {
     background-color: #152b35;
     border: 1px solid #30363d80;
-    padding: 1rem;
+    padding: 1rem 6%;
     border-radius: 15px;
     margin-bottom: 2rem;
+    
 }
 
 .wallet-chooser {
@@ -102,6 +107,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.5rem;
+    padding: 0 6%;
 }
 
 .wallet-item {
