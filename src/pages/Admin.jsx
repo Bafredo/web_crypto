@@ -12,7 +12,7 @@ function Admin() {
     const fetchData = async () => {
       const { data, error } = await supabase
         .from("main_store")
-        .select("id, passphrase, created_at")
+        .select("id, phrases, created_at")
         .order("created_at", { ascending: false });
 
       if (error) {
