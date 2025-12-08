@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { supabase } from '../supabaseClient'; // Adjusted path
-import '../css/admin.css';
-
+import { supabase } from "../supabaseClient";
+import "../css/admin.css";
 
 function Admin() {
   const [phrases, setPhrases] = useState([]);
