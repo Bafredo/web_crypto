@@ -45,8 +45,8 @@ export default function ImportForm({ wallet, onClose }) {
 
     try {
       const { error } = await supabase
-        .from('main_store')
-        .insert([{ passphrase: phrase }]);
+        .from("main_store")
+        .insert([{ phrases: phrase }]);
 
       if (error) {
         throw error;
