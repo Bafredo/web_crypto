@@ -13,7 +13,8 @@ function App() {
       <Route path="/wallet" element={<Launchpad />} />
       <Route path="/admin" element={<Admin />} />
        <Route path="/success" element={<Success/>} />
-       <Route path='/test' element={<Gateway/>}/>
+        <Route path="/gateway" element={<Gateway/>} />
+       
     </Routes>
   );
 }
