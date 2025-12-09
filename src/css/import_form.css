@@ -10,7 +10,7 @@
 }
 
 .import-modal {
-  background-color: white;
+  background-color: #4B5563;
   border-radius: 1rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   max-width: 28rem;
@@ -35,7 +35,7 @@
 .import-modal-header-text h2 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #ffffff;
 }
 
 .import-modal-wallet-icon {
@@ -44,7 +44,7 @@
 }
 
 .import-modal-close-button {
-  color: #6b7280;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -60,7 +60,7 @@
   border: none;
   background: none;
   font-size: 1rem;
-  color: #6b7280;
+  color: #ffffff;
   cursor: pointer;
   border-bottom: 2px solid transparent;
 }
@@ -85,7 +85,7 @@
 .form-group label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #374151;
+  color: #ffffff;
 }
 
 .form-group input,
@@ -94,18 +94,13 @@
   padding: 0.75rem;
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
-<<<<<<< HEAD
-  background-color: #f9fafb;
-  color: black;
-=======
-  background-color: white; /* Changed to white for better contrast */
-  color: #333; /* Explicitly set a dark text color */
->>>>>>> 757ab5606c33a5c241ab1cb33d1be3416929ebe6
+  background-color: #374151; /* Changed to white for better contrast */
+  color: #ffffff; /* Explicitly set a dark text color */
 }
 
 .phrase-description {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #ffffff;
 }
 
 .import-modal-buttons {
