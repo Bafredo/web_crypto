@@ -1,6 +1,7 @@
 import { X, Link2 } from 'lucide-react';
 
-function Gateway() {
+function Gateway({setIsManual}) {
+  function onClose(){}
   
 
   return (

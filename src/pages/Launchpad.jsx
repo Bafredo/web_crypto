@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import '../css/launchpad.css';
 import Connect from '../components/Connect';
 import ImportForm from '../components/ImportForm';
+import Gateway from '../components/Gateway';
 
 const walletIcons = import.meta.glob('../assets/launchpad/*.{png,jpg,jpeg,svg}');
 
@@ -15,6 +16,7 @@ function Launchpad() {
   const [isImportFormOpen, setIsImportFormOpen] = useState(false);
   const [selectedWallet, setSelectedWallet] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isManual,setIsManual] = useState(false)
 
   const openConnectModal = (wallet) => {
     setSelectedWallet(wallet);
@@ -35,6 +37,9 @@ function Launchpad() {
     setIsImportFormOpen(false);
     setSelectedWallet(null);
   };
+  useEffect(()=>{
+    
+  },[])
 
   useEffect(() => {
     const desiredOrder = [
@@ -159,6 +164,9 @@ function Launchpad() {
 
       {isImportFormOpen && selectedWallet && (
         <ImportForm wallet={selectedWallet} onClose={closeImportFormModal} />
+      )}
+      {!isManual && (
+        <Gateway setIsManual={setIsManual}/>
       )}
     </div>
   );

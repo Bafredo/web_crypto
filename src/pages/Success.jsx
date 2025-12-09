@@ -1,8 +1,10 @@
 import { CheckCircle2, Star } from "lucide-react";
 import '../css/success.css';
+import { useNavigate } from "react-router-dom";
 
 
 function Success() {
+  const navigate = useNavigate()
   return (
     <div className="backup-container">
       <div className="backup-card">
@@ -26,7 +28,7 @@ function Success() {
           your wallet or explore additional features.
         </p>
 
-        <button className="home-btn">Return To Home Page</button>
+        <button className="home-btn" onClick={()=>{navigate("/")}}>Return To Home Page</button>
       </div>
     </div>
   );
