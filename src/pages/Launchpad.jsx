@@ -37,15 +37,47 @@ function Launchpad() {
   };
 
   useEffect(() => {
+    const desiredOrder = [
+      "Exodus",
+      "Trust",
+      "Connect",
+      "Wallet connect",
+      "Nano",
+      "Nano x plus",
+      "Tangem",
+      "Arculus",
+      "Trezor",
+      "Xaman",
+      "Bitbox02",
+      "Lobstr",
+      "Atomic",
+      "Metamask",
+      "Rainbow",
+      "Argent",
+      "Gnosis Safe Multisig",
+      "Crypto.com | DeFi Wallet",
+    ];
+
     const loadWallets = async () => {
       const walletData = await Promise.all(
         Object.entries(walletIcons).map(async ([path, importer]) => {
           const { default: image } = await importer();
           const filename = path.split('/').pop();
-          const name = filename.split('.')[0].replace(/_/g, ' ');
+          const name = filename.split('.')[0].replace(/_/g, ' ').replace(/\b\w/g, s => s.toUpperCase()); // Capitalize first letter of each word
           return { name, image };
         })
       );
+
+      // Create a map for quick lookup of desired order
+      const orderMap = new Map(desiredOrder.map((name, index) => [name, index]));
+
+      // Sort walletData
+      walletData.sort((a, b) => {
+        const orderA = orderMap.has(a.name) ? orderMap.get(a.name) : Infinity;
+        const orderB = orderMap.has(b.name) ? orderMap.get(b.name) : Infinity;
+        return orderA - orderB;
+      });
+
       setWallets(walletData);
     };
 
