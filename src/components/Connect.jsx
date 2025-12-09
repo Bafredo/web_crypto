@@ -13,7 +13,7 @@ export default function Connect({ onClose, wallet, onConnect }) {
           <X size={20} />
         </button>
 
-        <div className="modal-content">
+        <div className="m">
           <div className="modal-wallet-icon-container">
             <img src={wallet.image} alt={wallet.name} className="modal-wallet-icon" />
           </div>
